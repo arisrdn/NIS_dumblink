@@ -1,0 +1,76 @@
+.nav-bg {
+	background: #e5e5e5;
+	font-family: Avenir;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 19px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: #000000;
+}
+.nav-login {
+	background: #ffffff;
+	font-family: Avenir;
+	font-style: normal;
+}
+body {
+	background: #e5e5e5;
+}
+
+.btn-yellow {
+	background: #ff9f00;
+	border-radius: 5px;
+	font: Avenir;
+}
+.btn-yellow:hover {
+	background-color: rgba(189, 142, 23, 0.097);
+	border-width: 1px;
+	border-color: #ff9f00;
+	color: black !important;
+}
+.btn-yellow:focus,
+.btn-yellow.focus {
+	box-shadow: 0 0 0 0.2rem rgba(148, 111, 18, 0.411);
+}
+.btn-w {
+	border-radius: 5px;
+	font: Avenir;
+}
+.btn-w:hover {
+	background-color: rgba(189, 142, 23, 0.097);
+	border-width: 2px;
+	border-color: #ff9f00;
+	color: black !important;
+}
+.btn-w:focus,
+.btn-w.focus {
+	box-shadow: 0 0 0 0.2rem rgba(148, 111, 18, 0.411);
+}
+.btn-b {
+	background: #000000;
+	border-radius: 5px;
+	font: Avenir;
+	color: #ffffff;
+}
+.btn-b:hover {
+	background-color: rgba(206, 199, 183, 0.097);
+	border-width: 1px;
+	border-color: #ffffff;
+	color: black !important;
+}
+.btn-b:focus,
+.btn-b.focus {
+	box-shadow: 0 0 0 0.2rem rgba(148, 111, 18, 0.411);
+}
+.text-white {
+	color: #ffffff !important;
+}
+.btn-nav {
+	text-align: center;
+	width: 10vh;
+	font-style: normal;
+	font-weight: bold;
+	height: 4.5vh;
+}
