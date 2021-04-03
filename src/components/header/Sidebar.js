@@ -4,20 +4,17 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import logo from "../../assets/img/logo.svg";
 import "../../assets/css/sidebar.css";
+import CustomLink from "../custom/LinkActive";
 
 const Footer = ({ children }) => {
 	const [show, setShow] = useState(false);
-	// const [show, setShow] = useState(false);
 
-	const handleClose = () => setShow("");
-	const handleShow = () => setShow("active");
 	const handle = () => {
 		setShow((prev) => !prev);
 	};
 	const [state, dispatch] = useContext(AuthContext);
 
 	const logoutUser = () => {
-		// console.log("lll", state);
 		dispatch({
 			type: "LOGOUT",
 		});
@@ -35,56 +32,51 @@ const Footer = ({ children }) => {
 						<strong className="orange">WL </strong>
 					</div>
 
-					<ul className="list-unstyled components">
+					<ul
+						className={
+							show
+								? "list-unstyled components  "
+								: "list-unstyled components pl-4 "
+						}
+					>
+						<CustomLink to="/" label="Home" icon="fas fa-cubes" />
+
 						<li className="active">
-							<a
-								href="#homeSubmenu"
-								data-toggle="collapse"
-								aria-expanded="false"
-								className="dropdown-toggle"
-							>
+							<Link to="/user/template">
 								<i class="fas fa-cubes"></i>
-								Home
-							</a>
+								Template
+							</Link>
 						</li>
 						<li>
-							<a href="#">
+							<Link to="/user">
 								<i class="far fa-user-circle"></i>
-								About
-							</a>
-							<a
-								href="#pageSubmenu"
-								data-toggle="collapse"
-								aria-expanded="false"
-								className="dropdown-toggle"
-							>
+								Profile
+							</Link>
+						</li>
+						<li>
+							<Link to="/user/mylink">
 								<i class="fas fa-link"></i>
-								Pages
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fas fa-image"></i>
-								Portfolio
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fas fa-question"></i>
-								FAQ
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="fas fa-paper-plane"></i>
-								Contact
-							</a>
+								My Link
+							</Link>
 						</li>
 					</ul>
 
-					<ul className="list-unstyled CTAs">
+					<ul
+						className={
+							show
+								? "list-unstyled components  "
+								: "list-unstyled components pl-4 "
+						}
+						style={{
+							position: "absolute",
+							bottom: "2px",
+						}}
+					>
 						<li>
-							<Nav.Link onClick={logoutUser}>logout</Nav.Link>
+							<Nav.Link onClick={logoutUser}>
+								<i class="fas fa-sign-out-alt"></i>
+								logout
+							</Nav.Link>
 						</li>
 						<li></li>
 					</ul>
@@ -94,7 +86,7 @@ const Footer = ({ children }) => {
 				<div id="content">
 					<Navbar
 						className="nav-login "
-						style={{ fonSize: "24px", minHeight: "60px" }}
+						style={{ fonSize: "24px", minHeight: "80px" }}
 					>
 						<div className="wrap" onClick={handle}>
 							<span className={show ? "arrow--l-r  right" : "arrow--l-r  left"}>

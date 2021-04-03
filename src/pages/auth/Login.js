@@ -132,7 +132,7 @@ function Login(props) {
 							type="submit"
 							variant="yellow"
 							className="btn btn-block btn-round"
-							disabled={!form.email || !form.password ? true : false}
+							// disabled={!form.email || !form.password ? true : false}
 						>
 							Login
 						</Button>

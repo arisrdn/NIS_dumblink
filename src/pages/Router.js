@@ -5,6 +5,7 @@ import {
 	useLocation,
 	useHistory,
 	useParams,
+	Redirect,
 } from "react-router-dom";
 
 import { API, setAuthToken } from "../config/api";
@@ -75,13 +76,11 @@ export default function MasterRoute() {
 			)}
 			<Route exact path="/:unique" component={RenderTemplate} />
 
-			{/* <Navbarlanding /> */}
-			{/* <Sidebar /> */}
 			<Switch>
 				{!state.isLogin ? (
 					<Route exact path="/" component={Landing} />
 				) : (
-					<Route exact path="/" component={Profile} />
+					<Redirect to="/user/" />
 				)}
 				{/* <NavigationBar /> */}
 				{/* <Route component={NoMatch} /> */}

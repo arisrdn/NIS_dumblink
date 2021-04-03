@@ -74,3 +74,16 @@ body {
 	font-weight: bold;
 	height: 4.5vh;
 }
+
+.input-bg {
+	background: #efefef;
+	border: 2px solid #d2d2d2;
+}
+.input-bg2 {
+	background: rgba(210, 210, 210, 0.25);
+	border: 2px solid #766c6c !important;
+}
+.input-bg:focus {
+	border: 2px solid #000000;
+	box-shadow: 0 0 0 0.2rem rgba(130, 123, 73, 0.25);
+}
