@@ -1,12 +1,39 @@
 import { useContext, useState } from "react";
 import { Navbar, Nav, Image } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import logo from "../../assets/img/logo.svg";
 import "../../assets/css/sidebar.css";
 import CustomLink from "../custom/LinkActive";
+import withBreadcrumbs from "react-router-breadcrumbs-hoc";
+import React from "react";
 
-const Footer = ({ children }) => {
+const routeConfig = [
+	[
+		{ path: "/user/create", breadcrumb: "create-breadcrumb" },
+		{ path: "/user", breadcrumb: null },
+		{ path: "/", breadcrumb: null },
+		{ path: "/user/template/crete/:id", breadcrumb: null },
+		{ path: "/user/mylink/edit/:id", breadcrumb: null },
+	],
+];
+const Breadcrumbs = withBreadcrumbs(routeConfig)(({ breadcrumbs }) => (
+	<>
+		{breadcrumbs.map(({ breadcrumb, match }, index) => (
+			<span className="bc" key={match.url}>
+				{index !== 1 ? (
+					<Link>{breadcrumb}</Link>
+				) : (
+					<Link style={{ fontSize: "18px" }}>{breadcrumb}</Link>
+				)}
+				{index < breadcrumbs.length - 1 && "\xa0 >\xa0 "}
+			</span>
+		))}
+	</>
+));
+
+const SideBar = ({ children }) => {
+	const router = useHistory();
 	const [show, setShow] = useState(false);
 
 	const handle = () => {
@@ -18,6 +45,7 @@ const Footer = ({ children }) => {
 		dispatch({
 			type: "LOGOUT",
 		});
+		router.push("/");
 	};
 
 	return (
@@ -39,26 +67,17 @@ const Footer = ({ children }) => {
 								: "list-unstyled components pl-4 "
 						}
 					>
-						<CustomLink to="/" label="Home" icon="fas fa-cubes" />
-
-						<li className="active">
-							<Link to="/user/template">
-								<i class="fas fa-cubes"></i>
-								Template
-							</Link>
-						</li>
-						<li>
-							<Link to="/user">
-								<i class="far fa-user-circle"></i>
-								Profile
-							</Link>
-						</li>
-						<li>
-							<Link to="/user/mylink">
-								<i class="fas fa-link"></i>
-								My Link
-							</Link>
-						</li>
+						<CustomLink
+							to="/user/template"
+							label="Template"
+							icon="fas fa-cubes"
+						/>
+						<CustomLink
+							to="/user/profile"
+							label="Profile"
+							icon="far fa-user-circle"
+						/>
+						<CustomLink to="/user/mylink" label="My Link" icon="fas fa-link" />
 					</ul>
 
 					<ul
@@ -73,10 +92,10 @@ const Footer = ({ children }) => {
 						}}
 					>
 						<li>
-							<Nav.Link onClick={logoutUser}>
-								<i class="fas fa-sign-out-alt"></i>
+							<Link onClick={logoutUser}>
+								<i className="fas fa-sign-out-alt"></i>
 								logout
-							</Nav.Link>
+							</Link>
 						</li>
 						<li></li>
 					</ul>
@@ -102,16 +121,17 @@ const Footer = ({ children }) => {
 							className="ml-4 text-capitalize font-weight-bold"
 							style={{ fontSize: "24px" }}
 						>
-							{" "}
-							Template
+							{/* <SimpleBreadcrumbs /> */}
+
+							<Breadcrumbs />
 						</div>
 					</Navbar>
 
-					<div className="container">{children}</div>
+					<div>{children}</div>
 				</div>
 			</div>
 		</>
 	);
 };
 
-export default Footer;
+export default SideBar;

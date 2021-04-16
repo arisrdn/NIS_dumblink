@@ -87,3 +87,162 @@ body {
 	border: 2px solid #000000;
 	box-shadow: 0 0 0 0.2rem rgba(130, 123, 73, 0.25);
 }
+
+.title-input {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	color: #7e7a7a;
+}
+
+.input-ct {
+	background: transparent;
+	border: none !important;
+	border-bottom: 1px solid black !important;
+	/* border-top: none black !important;
+	border-right: none !important;
+	border-left: none !important; */
+	border-radius: 0;
+}
+.input-ct2 {
+	background: transparent;
+	border: none !important;
+	border-bottom: 1px solid black !important;
+	border-radius: 0;
+}
+.input-ct:focus {
+	background: #d1d1c385;
+	border-bottom: 2px solid black !important;
+	/* border: 3px solid #000000 !important; */
+	box-shadow: none;
+	/* box-shadow: 0 0 2px #000000; */
+}
+.input-ct2:focus {
+	background: none;
+	border-bottom: 2px solid black !important;
+	/* border: 3px solid #000000 !important; */
+	box-shadow: none;
+	/* box-shadow: 0 0 2px #000000; */
+}
+.card-links {
+	background: #ececec;
+	/* border-radius: 10px; */
+}
+
+.label-img-ct {
+	background: #ff9f00;
+	color: white;
+	padding: 0.5rem;
+	font-family: sans-serif;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+.label-img-ct:hover {
+	/* background: #ff9d0025; */
+	color: black;
+}
+
+/* ?input serach */
+/* 
+.input-icons i {
+	position: absolute;
+}
+
+.input-icons {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.icon-inside {
+	padding: 10px;
+	color: green;
+	min-width: 50px;
+	text-align: center;
+}
+
+.input-field {
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+}
+
+/* Styles for wrapping the search box */
+
+/* .main {
+	width: 50%;
+	margin: 50px auto;
+}
+*/
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+	padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	width: 2.375rem;
+	height: 2.375rem;
+	line-height: 2.375rem;
+	text-align: center;
+	pointer-events: none;
+	color: #aaa;
+}
+
+.nav--link {
+	/* font-size: large; */
+	font-weight: initial;
+	font-weight: bold;
+}
+
+.nav--link.active {
+	/* font-size: large; */
+	font-weight: bolder;
+	background-color: rgb(243, 242, 241);
+	border-bottom: 1px solid #ff9f00;
+}
+.nav--link:hover {
+	/* font-size: large; */
+	font-weight: bold;
+	background-color: blanchedalmond;
+}
+
+.myAlert-top {
+	position: fixed;
+	top: 10px;
+	left: 2%;
+	width: 96%;
+}
+
+.page {
+	width: 100%;
+	/*background-color: yellow;*/
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+.svg-container {
+	display: block;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.number {
+	height: 250px;
+}
+.st0 {
+	fill: yellow;
+}
+.st1 {
+	fill: none;
+	stroke: #000000;
+	stroke-width: 8;
+	stroke-linecap: round;
+}
+.nunito {
+	font-family: "nunito", sans-serif;
+}

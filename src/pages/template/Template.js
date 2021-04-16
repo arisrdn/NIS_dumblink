@@ -7,7 +7,7 @@ import t2 from "./img/t2.svg";
 const Template = () => {
 	const router = useHistory();
 	const handleClick = (id) => {
-		router.push(`/template/crete/${id}`);
+		router.push(`/user/template/crete/${id}`);
 	};
 	return (
 		<div>

@@ -9,13 +9,9 @@ const Navbarlanding = () => {
 	const [state, dispatch] = useContext(AuthContext);
 
 	const logoutUser = () => {
-		// console.log("lll", state);
 		dispatch({
 			type: "LOGOUT",
 		});
-		// cartDispatch({
-		// 	type: "EMPETY_CART",
-		// });
 	};
 	return (
 		<Navbar className="nav-login">

@@ -1,9 +1,17 @@
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
-// import Header from "../compnents/hero/Header";
+import { AuthContext } from "../contexts/authContext";
+import { useContext } from "react";
+
 import bgLanding from "../assets/img/bg-landing.svg";
 import pc from "../assets/img/PC.svg";
 import "../assets/css/landing.css";
 function Home() {
+	const [state, dispatch] = useContext(AuthContext);
+	const handleOpenLogin = () => {
+		dispatch({
+			type: "MODAL_LOGIN_OPEN",
+		});
+	};
 	return (
 		<>
 			<Container
@@ -45,7 +53,7 @@ function Home() {
 								</p>
 							</Col>
 							<Col xs="12" className="d-flex align-items-end mt-lg-5 pt-lg-4">
-								<Button variant="b" size="lg">
+								<Button variant="b" size="lg" onClick={handleOpenLogin}>
 									Get Started For Free
 								</Button>
 							</Col>
@@ -61,8 +69,3 @@ function Home() {
 }
 
 export default Home;
-// const Landing = () => {
-// 	return <div></div>;
-// };
-
-// export default Landing;

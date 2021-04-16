@@ -10,7 +10,8 @@ const LinkActive = ({ label, to, icon, activeOnlyWhenExact }) => {
 		<>
 			<li className={match ? "active" : ""}>
 				<Link to={to}>
-					<i class={icon}></i>
+					<i className={icon}></i>
+					{/* <pre>{JSON.stringify(match, 0, 2)}</pre> */}
 					{label}
 				</Link>
 			</li>
